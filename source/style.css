@@ -10,18 +10,6 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-.myVideo {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
 .container {
     width: 90%;
     max-width: 600px;
@@ -168,4 +156,17 @@ input {
     font-size: 2.8rem;
     color: #5585b5;
     text-align: center;
+}
+small {
+    font-size: 80%;
+    font-weight: 400;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+a:hover, a:focus {
+    text-decoration: underline;
 }
