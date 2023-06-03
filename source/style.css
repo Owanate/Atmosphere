@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(95.2deg, rgb(173, 252, 234) 26.8%, rgb(192, 229, 246) 64%) center center/cover no-repeat;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.myVideo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px 30px;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      328px at 2.9% 15%,
+      rgb(191, 224, 251) 0%,
+      rgb(232, 233, 251) 25.8%,
+      rgb(252, 239, 250) 50.8%,
+      rgb(234, 251, 251) 77.6%,
+      rgb(240, 251, 244) 100.7%
+    );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.logo {
+    color: #5585b5;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo i {
+    font-size: 2.5rem;
+}
+
+.logo p {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+form {
+    margin-block: .7em;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 70%;
+    height: 45px;
+    padding: 15px;
+    margin-inline-end: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+::placeholder {
+    font-size: 17px;
+}
+
+.btn {
+    width: 25%;
+    height: 45px;
+    background: #5585b5;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.city {
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding-block-end: 0.3em;
+}
+
+.date {
+    font-size: 1rem;
+    padding-block-end: 0.4em;
+    display: flex;
+    gap: 1em;
+}
+
+.details {
+    font-size: 0.8rem;
+}
+
+.weather-info {
+    color: #5585b5;
+    font-weight: 600;
+}
+
+.report {
+    padding-inline-end: 0.7em;
+}
+
+.main-temp {
+    display: flex;
+    gap: 0.6em;
+    align-items: center;
+}
+
+.main-temp p {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.metric {
+    color: #000000;
+    text-decoration: none;
+}
+
+.main-temp i {
+    font-size: 2.5rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-block-start: 1em;
+}
+
+.future-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day {
+    text-align: center;
+}
+
+.cloud {
+    font-size: 2.8rem;
+    color: #5585b5;
+    text-align: center;
+}

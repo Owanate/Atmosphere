@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmosphere</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/source/style.css">
+</head>
+<body>
+    <video autoplay muted loop class="myVideo">
+        <source src="/media/pexels-engin-akyurt-2324274-3840x2160-25fps.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+   <section class="container">
+        <a href="" class="logo">
+            <i class="ri-haze-fill"></i>
+            <p>Atmosphere</p>
+        </a>
+
+        <form id="search-form">
+            <input type="text" name="" id="search-input" placeholder="Please enter a city...">
+            <input type="submit" value="Search" class="btn">
+        </form>
+
+        <div class="content">
+            <div>
+                <h1 class="city" id="city"></h1>
+                <p class="date">
+                    <span id="date"></span> 
+                    <span class="weather-info" id="desc"></span>
+                </p>
+                <p class="details">
+                    <span class="report" id="humid"></span>
+                    <span id="wind"></span>
+                </p>
+            </div>
+            <div class="main-temp">
+                <i class="ri-sun-line"></i>
+                <p >
+                    <span id="temp"></span>
+                    <!-- <a href="" class="metric" id="metric">°C</a> -->
+                </p>
+            </div>
+        </div>
+        
+        <div class="wrapper">
+            <div class="future-weather">
+                <p class="day">Fri</p>
+                <i class="ri-cloudy-2-line cloud"></i>
+                <p class="temp">30° 26°</p>
+            </div>
+            <div class="future-weather">
+                <p class="day">Sat</p>
+                <i class="ri-cloudy-2-line cloud"></i>
+                <p class="temp">31° 26°</p>
+            </div>
+            <div class="future-weather">
+                <p class="day">Sun</p>
+                <i class="ri-cloudy-2-line cloud"></i>
+                <p class="temp">27° 25°</p>
+            </div>
+            <div class="future-weather">
+                <p class="day">Mon</p>
+                <i class="ri-cloudy-2-line cloud"></i>
+                <p class="temp">28° 25°</p>
+            </div>
+            <div class="future-weather">
+                <p class="day">Tue</p>
+                <i class="ri-cloudy-2-line cloud"></i>
+                <p class="temp">31° 26°</p>
+            </div>
+        </div>
+   </section>
+
+   <script src="/source/index.js"></script>
+</body>
+</html>
