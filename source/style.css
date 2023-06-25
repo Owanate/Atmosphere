@@ -86,7 +86,6 @@ input {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: start;
 }
 
 .city {
@@ -111,6 +110,8 @@ input {
     font-weight: 600;
 }
 
+.weather-info:first-letter{text-transform: capitalize;}
+
 .report {
     padding-inline-end: 0.7em;
 }
@@ -126,7 +127,7 @@ input {
     font-weight: bold;
 }
 
-.metric {
+.metric, .metric:focus {
     color: #000000;
     text-decoration: none;
 }

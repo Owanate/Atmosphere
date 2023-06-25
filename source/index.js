@@ -1,5 +1,6 @@
 // Get APIKey
 const apiKey ="bb54be0147ot8a4cca9066da1f16f233";
+let celsiusTemp = null;
 
 
 // Set the current date
@@ -14,11 +15,13 @@ if (date.getHours() < 12 || date.getHours() == 0){
 
 // Display Weather details
 function displayWeather(data) {
+    celsiusTemp = data.temperature.current;
     document.querySelector('#city').innerText = data.city;
     document.querySelector('#desc').innerText = data.condition.description;
     document.querySelector('#humid').innerText = `Humidity: ${data.temperature.humidity}%`;
     document.querySelector('#wind').innerText = `Wind: ${data.wind.speed}km/h`;
-    document.querySelector('#temp').innerText = `${data.temperature.current} °C`;
+    document.querySelector('#temp').innerText = `${celsiusTemp}`;
+    document.querySelector('.weather-icon').src = `${data.condition.icon_url}`;
 }
 
 
@@ -44,3 +47,20 @@ form.addEventListener('submit',(event) => {
         ).then(response => response.json()
         ).then(data => displayWeather(data));
     })
+
+// Convert Temperature
+document.querySelector('#metric').addEventListener('click', convertTemperature);
+function convertTemperature(event) {
+    let temperature = document.querySelector('#temp');
+    event.preventDefault();
+    let fahrenheit = (celsiusTemp * 9/5) + 32;
+    if (!this.dataset.clicked) {
+        this.setAttribute("data-clicked", "true");
+        temperature.innerText = fahrenheit;
+        metric.innerText ="°F";
+    } else {
+        this.removeAttribute("data-clicked");
+        temperature.innerText = celsiusTemp;
+        metric.innerText ="°C"
+    }
+}
