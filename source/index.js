@@ -6,8 +6,11 @@ const apiKey ="bb54be0147ot8a4cca9066da1f16f233";
 let date = new Date();
 let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"];
 let today = document.querySelector('#date');
-today.innerText = `${days[date.getDay()]} ${date.getHours()}: ${date.getMinutes()}`;
-
+if (date.getHours() < 12 || date.getHours() == 0){
+    today.innerText =`${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')} AM`
+}else{
+    today.innerText =`${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')} PM`
+}
 
 // Display Weather details
 function displayWeather(data) {
