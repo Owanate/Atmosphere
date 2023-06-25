@@ -31,7 +31,7 @@ async function currentPosition(position) {
     const response = await fetch(url);
     const data = await response.json();
     displayWeather(data);
-    forecast(lat, lon);
+    getForecast(lat, lon);
 }
 
 // Search form
@@ -62,7 +62,7 @@ function convertTemperature(event) {
 }
 
 // eather Forecast
-async function forecast(lat, lon) {
+async function getForecast(lat, lon) {
     let url = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`
     const response = await fetch(url)
     const data = await response.json();
