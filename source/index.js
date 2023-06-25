@@ -4,7 +4,6 @@ let celsiusTemp = null;
 
 // Set the current date
 let date = new Date();
-let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"];
 let today = document.querySelector('#date');
 if (date.getHours() < 12 || date.getHours() == 0){
     today.innerText =`${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')} AM`
@@ -32,6 +31,7 @@ async function currentPosition(position) {
     const response = await fetch(url);
     const data = await response.json();
     displayWeather(data);
+    forecast(lat, lon);
 }
 
 // Search form
@@ -58,5 +58,29 @@ function convertTemperature(event) {
         this.removeAttribute("data-clicked");
         temperature.innerText = celsiusTemp;
         metric.innerText ="°C"
+    }
+}
+
+// eather Forecast
+async function forecast(lat, lon) {
+    let url = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`
+    const response = await fetch(url)
+    const data = await response.json();
+    let forecasts = document.querySelector('.wrapper');
+    for (let i = 0; i < 4; i++) {
+        let tomorrow = new Date();
+        tomorrow.setDate(new Date().getDate() + i);
+        let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"];
+        let forecast = 
+            
+            `<div class="future-weather">
+                <p class="day">${days[tomorrow.getDay()]}</p>
+                <img src="${data.daily[i].condition.icon_url}" alt="" class="forecast-img">
+                <p class="temp">
+                    <span>${data.daily[i].temperature.maximum.toFixed()}°</span>
+                    <span>${data.daily[i].temperature.minimum.toFixed()}°</span>
+                </p>
+            </div>`;
+        forecasts.insertAdjacentHTML('beforeend', forecast);
     }
 }
