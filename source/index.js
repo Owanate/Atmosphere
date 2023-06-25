@@ -1,7 +1,6 @@
-// Get APIKey
+// Get variables
 const apiKey ="bb54be0147ot8a4cca9066da1f16f233";
 let celsiusTemp = null;
-
 
 // Set the current date
 let date = new Date();
@@ -24,10 +23,8 @@ function displayWeather(data) {
     document.querySelector('.weather-icon').src = `${data.condition.icon_url}`;
 }
 
-
 // Weather of current position
 navigator.geolocation.getCurrentPosition(currentPosition);
-
 async function currentPosition(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
@@ -36,7 +33,6 @@ async function currentPosition(position) {
     const data = await response.json();
     displayWeather(data);
 }
-
 
 // Search form
 let form = document.querySelector('#search-form');
