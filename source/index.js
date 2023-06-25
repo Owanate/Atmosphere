@@ -1,5 +1,5 @@
 // Get APIKey
-const apiKey = "58bab989e7f95b6d56a017f42601cf07";
+const apiKey ="bb54be0147ot8a4cca9066da1f16f233";
 
 
 // Set the current date
@@ -25,7 +25,7 @@ navigator.geolocation.getCurrentPosition(currentPosition);
 async function currentPosition(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    const url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
     const response = await fetch(url);
     const data = await response.json();
     displayWeather(data);
@@ -37,7 +37,7 @@ let form = document.querySelector('#search-form');
 let city = document.querySelector('#search-input');
 form.addEventListener('submit',(event) => {
     event.preventDefault();
-    fetch (`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=metric&appid=${apiKey}`
+    fetch (`https://api.shecodes.io/weather/v1/current?query=${city.value}&key=${apiKey}&units=metric`
         ).then(response => response.json()
         ).then(data => displayWeather(data));
     })
