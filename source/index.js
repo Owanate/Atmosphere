@@ -44,20 +44,3 @@ form.addEventListener('submit',(event) => {
         ).then(response => response.json()
         ).then(data => displayWeather(data));
     })
-
-// Convert temperature 
-document.querySelector('#metric').addEventListener('click', convertTemperature);
-function convertTemperature() {
-    let celsius = temperature.innerText;
-    let fahrenheit = (celsius * 9/5) + 32;
-    if (!this.dataset.clicked) {
-        this.setAttribute("data-clicked", "true");
-        temperature.innerText = fahrenheit;
-        metric.innerText ="°F";
-    } else {
-        this.removeAttribute("data-clicked");
-        temperature.innerText = celsius;
-        metric.innerText ="°C"
-    }
-}
-
