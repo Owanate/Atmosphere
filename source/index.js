@@ -11,11 +11,11 @@ today.innerText = `${days[date.getDay()]} ${date.getHours()}: ${date.getMinutes(
 
 // Display Weather details
 function displayWeather(data) {
-    document.querySelector('#city').innerText = data.name;
-    document.querySelector('#desc').innerText = data.weather[0].description;
-    document.querySelector('#humid').innerText = `Humidity: ${data.main.humidity}%`;
+    document.querySelector('#city').innerText = data.city;
+    document.querySelector('#desc').innerText = data.condition.description;
+    document.querySelector('#humid').innerText = `Humidity: ${data.temperature.humidity}%`;
     document.querySelector('#wind').innerText = `Wind: ${data.wind.speed}km/h`;
-    document.querySelector('#temp').innerText = `${data.main.temp} °C`;
+    document.querySelector('#temp').innerText = `${data.temperature.current} °C`;
 }
 
 
