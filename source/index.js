@@ -13,7 +13,7 @@ if (date.getHours() < 12 || date.getHours() == 0){
 
 // Display Weather details
 function displayWeather(data) {
-    celsiusTemp = data.temperature.current;
+    celsiusTemp = data.temperature.current.toFixed();
     document.querySelector('#city').innerText = data.city;
     document.querySelector('#desc').innerText = data.condition.description;
     document.querySelector('#humid').innerText = `Humidity: ${data.temperature.humidity}%`;
@@ -61,7 +61,7 @@ function convertTemperature(event) {
     }
 }
 
-// eather Forecast
+// Weather Forecast
 async function getForecast(lat, lon) {
     let url = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`
     const response = await fetch(url)
